@@ -1,0 +1,22 @@
+<h1>Listing tasks</h1>
+
+<div id='newform'>
+  <%= render :partial => "newform", :locals => { :@task => Task.new } %>
+</div>
+
+<table id="alltasks">
+	<tr id="tablehead">
+	    <th>Name</th>
+	    <th>Note</th>
+	    <th>Priority</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+
+  <%= render :partial => "task", :collection => @tasks %>
+</table>
+
+<br />
+
+<%= link_to 'New Task', new_task_path %>

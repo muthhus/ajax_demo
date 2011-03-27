@@ -1,0 +1,3 @@
+if params[:editorId]
+  page.replace_html params[:editorId], @task.name
+end

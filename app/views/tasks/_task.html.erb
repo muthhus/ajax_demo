@@ -1,0 +1,21 @@
+<tr id="<%= dom_id(task) %>">
+	
+   <td><div id="<%= dom_id(task, :name) %>"><%= task.name %></div></td>
+
+	 <% # add the inplace-editor for the task name %>
+	  <%= javascript_tag do %>
+        new Ajax.InPlaceEditor('<%= dom_id(task, :name) %>', '<%= task_path(task) %>',  { 
+			htmlResponse: false, 
+			ajaxOptions: {method: 'put'}, 
+			loadTextURL: '<%= taskname_task_path(task) %>',
+			callback: function(form, value) { return 'taskname=' + encodeURIComponent(value) },   
+		 } );
+     <% end %>
+
+   <td><%= task.note %></td>
+   <td><%= task.priority %></td>
+   <td><%= link_to 'Show', task %></td>
+   <td><%= link_to 'Edit', edit_task_path(task) %></td>
+   <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete, :remote => :true %></td>
+   <td><%= @test %>
+</tr>

@@ -1,0 +1,9 @@
+<%= form_for(@task, :remote => true) do |f| %>
+  <div>
+    <%= f.label 'Add a new task: ' %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

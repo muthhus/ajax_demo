@@ -1,0 +1,2 @@
+page.insert_html :after, @task_before, :partial => @task
+page.replace_html 'newform', :partial => "newform", :locals => { :@task => Task.new } 
