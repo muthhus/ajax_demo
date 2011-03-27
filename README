@@ -1,6 +1,8 @@
 Read the article "The Power of Ajax featuring Prototype and JQuery" on CommunityGuides: 
 http://www.communityguides.eu/articles/15
 
+Note that there a two branches here: Master (Prototype) and JQuery (JQuery)
+
 This article will demonstrate the use of asynchronous Javascript (Ajax) to generate a better user experience. Three common use cases - adding a new task, deleting a task and editing a task using an in-place-edit - will explained in detail for both the Prototype and the JQuery framework. As required by many real world applications, new tasks will be inserted at the correct position in ordered lists. For in-place-edit the Ajax.InPlaceEditor (Prototyp) and best_in_place (JQuery) will be used. The complete source code is available on Github.
 
 Ruby on Rails CommunityGuides follows the purpose of giving back to open source - more specific, to the Rails community. It has been built to provide a basis to share knowledge on Ruby on Rails development. Developers from all over the world can share their knowledge easily and gain profit from the knowledge of other developers. All content is free and published under a Creative Commons license.
