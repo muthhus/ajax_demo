@@ -1,4 +1,0 @@
-page.visual_effect :fade, dom_id(@task), :duration => 0.7
-page.delay(0.7) do 
-  page.replace dom_id(@task), ''
-end
