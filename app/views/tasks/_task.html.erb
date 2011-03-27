@@ -1,16 +1,5 @@
-<tr id="<%= dom_id(task) %>">
-	
-   <td><div id="<%= dom_id(task, :name) %>"><%= task.name %></div></td>
-
-	 <% # add the inplace-editor for the task name %>
-	  <%= javascript_tag do %>
-        new Ajax.InPlaceEditor('<%= dom_id(task, :name) %>', '<%= task_path(task) %>',  { 
-			htmlResponse: false, 
-			ajaxOptions: {method: 'put'}, 
-			loadTextURL: '<%= taskname_task_path(task) %>',
-			callback: function(form, value) { return 'taskname=' + encodeURIComponent(value) },   
-		 } );
-     <% end %>
+<tr id="<%= dom_id(task) %>">	
+   <td><%= best_in_place task, :name, :type => :input, :nil => "Click to edit" %></td>
 
    <td><%= task.note %></td>
    <td><%= task.priority %></td>

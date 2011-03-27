@@ -1,0 +1,2 @@
+$('#<%= @task_before %>').after('<%= escape_javascript(render(:partial => @task)) %>');
+$('#newform').html('<%= escape_javascript(render(:partial => "newform", :locals => { :@task => Task.new })) %>');

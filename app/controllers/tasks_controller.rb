@@ -77,29 +77,19 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
 
-    if params[:taskname]
-      @task.name = params[:taskname]
-    end
-
     respond_to do |format|
       if @task.update_attributes(params[:task])
         format.html { redirect_to(@task, :notice => 'Task was successfully updated.') }
-        format.js
+        format.json { head :ok }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.js
+        format.json { render :json => @user.errors, :status => :unprocessable_entity }
         format.xml  { render :xml => @task.errors, :status => :unprocessable_entity }
       end
     end
   end
   
-  def taskname
-    @task = Task.find(params[:id])
-    
-    render :layout => false, :inline => "<%= @task.name %>"  
-  end
-
   # DELETE /tasks/1
   # DELETE /tasks/1.xml
   def destroy
